@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashbox Photobooth</title>
+<meta name="description" content="A self-serve photobooth we deliver to your venue. Guests tap, pose, and walk away with a printed strip in 12 seconds. No attendant, no hourly staffing bill.">
+<meta property="og:title" content="Flashbox — the photobooth that runs itself">
+<meta property="og:description" content="Delivered, self-serve, tap-to-pay. Unlimited strips, no attendant standing in the corner all night.">
+<meta name="theme-color" content="#140E1E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<!-- BODY:START -->
+<div class="flash-veil" id="flashVeil" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Flashbox home">
+    <svg class="brand-mark" viewBox="0 0 24 34" aria-hidden="true">
+      <rect x="1" y="1" width="22" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
+      <rect x="5" y="5" width="14" height="9" rx="1.5" fill="currentColor"/>
+      <rect x="5" y="17" width="14" height="9" rx="1.5" fill="currentColor" opacity=".45"/>
+    </svg>
+    <span class="brand-word">Flashbox</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#autonomy">Unstaffed</a>
+    <a href="#how">How it works</a>
+    <a href="#packages">Packages</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-primary btn-sm" href="#book">Check your date</a>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-copy reveal">
+      <p class="label label-amber">Unstaffed &middot; Self-serve &middot; Tap to pay</p>
+      <h1>The photobooth that shows up, runs itself, and goes home.</h1>
+      <p class="lede">A flight-cased booth we deliver to your venue. Guests tap, pose, and walk away holding a printed strip twelve seconds later. Nobody stands in the corner all night, and nobody bills you by the hour for it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#book">Check your date</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <dl class="stats">
+        <div><dt>12s</dt><dd>strip in hand</dd></div>
+        <div><dt>0</dt><dd>staff on site</dd></div>
+        <div><dt>15min</dt><dd>to set up</dd></div>
+        <div><dt>700</dt><dd>prints per load</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-booth reveal" aria-hidden="true">
+      <div class="booth">
+        <div class="booth-screen">
+          <div class="viewfinder">
+            <div class="vf-art"><svg viewBox="0 0 120 120" preserveAspectRatio="xMidYMax meet"><circle cx="42" cy="46" r="15"/><path d="M42 64c-14 0-24 10-24 24v32h48V88c0-14-10-24-24-24z"/><circle cx="82" cy="52" r="13"/><path d="M82 68c-12 0-21 9-21 21v31h42V89c0-12-9-21-21-21z"/></svg></div>
+            <div class="vf-grain"></div>
+            <div class="vf-count" id="count">3</div>
+            <div class="vf-chip"><span class="dot"></span> Live</div>
+          </div>
+          <div class="booth-bar">
+            <span class="booth-prompt" id="prompt">Tap anywhere to start</span>
+            <span class="booth-price">$5 / strip</span>
+          </div>
+        </div>
+        <div class="booth-body">
+          <div class="reader"><span class="reader-wave"></span> Tap to pay</div>
+          <div class="slot"><span></span></div>
+        </div>
+        <div class="strip-stack" id="stack"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="perf" role="separator"></div>
+
+  <section class="marquee" aria-label="Events we cover">
+    <div class="marquee-track">
+      <span>Weddings ✦ Birthdays ✦ Corporate parties ✦ Proms ✦ Bar &amp; bat mitzvahs ✦ Brand activations ✦ Club nights ✦ Graduations ✦ Anniversaries ✦ Baby showers ✦</span>
+      <span aria-hidden="true">Weddings ✦ Birthdays ✦ Corporate parties ✦ Proms ✦ Bar &amp; bat mitzvahs ✦ Brand activations ✦ Club nights ✦ Graduations ✦ Anniversaries ✦ Baby showers ✦</span>
+    </div>
+  </section>
+
+  <div class="perf" role="separator"></div>
+
+  <section class="section" id="autonomy">
+    <header class="section-head reveal">
+      <p class="label">Why it doesn't need a babysitter</p>
+      <h2>Every job an attendant does, the booth does on its own.</h2>
+      <p class="section-lede">Staffing is what makes a photobooth expensive. So we took the attendant out of the equation and put their whole job — money, prints, resets, troubleshooting — into the machine.</p>
+    </header>
+
+    <div class="bento">
+      <article class="tile tile-wide reveal">
+        <p class="label label-amber">Money</p>
+        <h3>Tap to pay on the shell, or prepaid by the host.</h3>
+        <p>A card reader is bolted to the booth. Guests tap a card or phone, the session unlocks, the strip prints. Hosts who'd rather nobody reaches for a wallet buy the night outright and the booth runs in unlimited mode instead.</p>
+        <div class="pay-row">
+          <span class="pay-chip">Contactless</span><span class="pay-chip">Apple&nbsp;Pay</span><span class="pay-chip">Google&nbsp;Pay</span><span class="pay-chip">Chip &amp; PIN</span><span class="pay-chip pay-chip-alt">Prepaid / unlimited</span>
+        </div>
+      </article>
+
+      <article class="tile reveal">
+        <p class="label label-amber">Reliability</p>
+        <h3>Kiosk mode guests can't break.</h3>
+        <p>It boots straight into the booth app, locks out everything else, times out back to the attract loop after every session, and a watchdog restarts it if anything hangs.</p>
+      </article>
+
+      <article class="tile reveal">
+        <p class="label label-amber">Remote eyes</p>
+        <h3>It tells us before you notice.</h3>
+        <p>Ribbon and paper counts, jam detection, offline alerts — all pushed to our phones over the booth's own 4G. We can take over the screen remotely mid-party without anyone at the venue lifting a finger.</p>
+        <ul class="pings">
+          <li><span class="ping ping-ok"></span> Printer ready &middot; 412 prints left</li>
+          <li><span class="ping ping-ok"></span> Payments online</li>
+          <li><span class="ping ping-warn"></span> Ribbon at 22% — swap tomorrow</li>
+        </ul>
+      </article>
+
+      <article class="tile reveal">
+        <p class="label label-amber">Prints</p>
+        <h3>Dry, cut and curl-free in twelve seconds.</h3>
+        <p>Dye-sublimation, not inkjet. Strips come out dry to the touch and survive being shoved in a jacket pocket at 1am.</p>
+      </article>
+
+      <article class="tile tile-wide reveal">
+        <p class="label label-amber">Afterwards</p>
+        <h3>Digital copies before they've left the booth.</h3>
+        <p>Guests scan the on-screen code and their strip lands on their phone — plus animated GIF and boomerang versions. The host gets one gallery link for everything, and a session report the next morning: strips printed, busiest hour, total taken on card.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="perf" role="separator"></div>
+
+  <section class="section" id="how">
+    <header class="section-head reveal">
+      <p class="label">Start to finish</p>
+      <h2>Four things happen. You're involved in one of them.</h2>
+    </header>
+    <ol class="steps">
+      <li class="step reveal"><span class="step-n">01</span><div><h3>We deliver it</h3><p>A wheeled flight case rolls in the service door. Two people, fifteen minutes, one standard power socket. We text you a photo of it set up and lit before we leave.</p></div></li>
+      <li class="step reveal"><span class="step-n">02</span><div><h3>Guests run it themselves</h3><p>The booth loops an attract screen until someone touches it. Pick a layout, three-two-one, four frames, done. The prompts are big enough to follow at midnight after a few drinks.</p></div></li>
+      <li class="step reveal"><span class="step-n">03</span><div><h3>It takes payment and prints</h3><p>Card tap or prepaid, then the strip drops into the tray and the digital copy goes to their phone. Between sessions it resets itself and waits for the next group.</p></div></li>
+      <li class="step reveal"><span class="step-n">04</span><div><h3>We collect it</h3><p>Next morning, on our schedule, not yours. Your gallery link and the night's report arrive by lunchtime.</p></div></li>
+    </ol>
+  </section>
+
+  <div class="perf" role="separator"></div>
+
+  <section class="section" id="packages">
+    <header class="section-head reveal">
+      <p class="label">Packages</p>
+      <h2>No hourly attendant fee, because there's no attendant.</h2>
+      <p class="section-lede">Delivery, setup, collection and unlimited digital copies are in every package. Travel beyond 40 miles is billed at cost.</p>
+    </header>
+    <div class="plans">
+      <article class="plan reveal">
+        <h3>Drop &amp; Go</h3>
+        <p class="plan-for">House parties, birthdays, office socials</p>
+        <p class="plan-price"><span class="cur">$</span>549</p>
+        <p class="plan-unit">flat, up to 4 hours</p>
+        <ul>
+          <li>Unlimited prints, prepaid by you</li>
+          <li>One strip design from our set</li>
+          <li>Digital gallery for every guest</li>
+          <li>Delivery, setup and collection</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="#book">Check your date</a>
+      </article>
+
+      <article class="plan plan-feature reveal">
+        <p class="plan-flag">Most booked</p>
+        <h3>Wedding Night</h3>
+        <p class="plan-for">Weddings, milestone parties, galas</p>
+        <p class="plan-price"><span class="cur">$</span>899</p>
+        <p class="plan-unit">flat, up to 8 hours</p>
+        <ul>
+          <li>Everything in Drop &amp; Go</li>
+          <li>Strip design in your colours, with your names and date</li>
+          <li>Backdrop and prop crate</li>
+          <li>Guest book — a second copy of every strip, glued and signed</li>
+          <li>Backup printer on site, loaded and ready</li>
+        </ul>
+        <a class="btn btn-primary btn-block" href="#book">Check your date</a>
+      </article>
+
+      <article class="plan reveal">
+        <h3>Venue Residency</h3>
+        <p class="plan-for">Bars, clubs, hotels, activity venues</p>
+        <p class="plan-price">from <span class="cur">$</span>350</p>
+        <p class="plan-unit">per month</p>
+        <ul>
+          <li>The booth lives at your venue full time</li>
+          <li>Guests pay by card, per strip</li>
+          <li>Revenue share on every print</li>
+          <li>Monthly service visit and consumables</li>
+          <li>Your branding on every strip</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="#book">Talk to us</a>
+      </article>
+    </div>
+  </section>
+
+  <div class="perf" role="separator"></div>
+
+  <section class="section" id="words">
+    <header class="section-head reveal">
+      <p class="label">From the tray</p>
+      <h2>What people say after the last strip prints.</h2>
+    </header>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <div class="quote-strip"><i class="qf qf1"></i><i class="qf qf2"></i><i class="qf qf3"></i></div>
+        <blockquote>Our venue coordinator kept asking where the photobooth person was. There wasn't one. We got 214 strips and the guest book is the thing my mum keeps showing people.</blockquote>
+        <figcaption>Priya &amp; Tom <span>Wedding, 180 guests</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="quote-strip"><i class="qf qf2"></i><i class="qf qf4"></i><i class="qf qf1"></i></div>
+        <blockquote>It paid for itself by 10pm. People queue for it, they tap, they print, they come back with a different group. We've had it in the bar for five months now.</blockquote>
+        <figcaption>Marcus O. <span>Venue residency, city-centre bar</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <div class="quote-strip"><i class="qf qf3"></i><i class="qf qf1"></i><i class="qf qf2"></i></div>
+        <blockquote>Ribbon ran out halfway through and I didn't even find out until the next day, because they'd already spotted it and the spare loaded itself into the queue. Nothing stopped.</blockquote>
+        <figcaption>Dani R. <span>Company summer party</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="perf" role="separator"></div>
+
+  <section class="section section-narrow" id="faq">
+    <header class="section-head reveal">
+      <p class="label">Straight answers</p>
+      <h2>The things people ask before they book.</h2>
+    </header>
+    <div class="faq reveal">
+      <details><summary>Is it genuinely unattended?</summary><p>Yes. The booth is designed to be left alone: it takes payment, prints, resets and reports on itself. We monitor it remotely all night and can drive the screen from our phones. For weddings over 200 guests we'll usually suggest a one-hour attended start so the first few groups set the tone, then we leave.</p></details>
+      <details><summary>What happens if the printer jams or runs out?</summary><p>The booth tells us before it tells your guests, and it stops selling sessions rather than taking money for a print it can't produce. Wedding Night bookings carry a loaded backup printer on site. Anything we can't fix remotely inside thirty minutes, we drive out and fix — no charge, and unprinted sessions are refunded automatically to the card used.</p></details>
+      <details><summary>Does it need your wifi?</summary><p>No. It has its own 4G connection and a battery-backed router. Card payments and digital delivery keep working if the venue's network falls over, and printing works even fully offline — anything queued syncs when it reconnects.</p></details>
+      <details><summary>How much space and power does it need?</summary><p>A 3ft by 3ft footprint for the booth, 8ft by 8ft if you want the backdrop and room to pose. One standard 13A socket. It runs on about the same power as a kettle that's never quite boiling.</p></details>
+      <details><summary>Can we put our names and colours on the strips?</summary><p>On Wedding Night and Residency, yes — we design the strip layout around your colours, names and date and send you a proof to approve a week before. Drop &amp; Go picks from our existing set, which we'll happily recolour.</p></details>
+      <details><summary>What about photos of children, and consent?</summary><p>Guests see a plain-language notice before the first frame and have to agree to it. Nothing is used for marketing without a separate opt-in. Galleries are private links that expire after 90 days, and we delete the originals at your request, no questions.</p></details>
+      <details><summary>How do we hold a date?</summary><p>A 25% deposit holds it. The balance is due a week before. Cancel more than 30 days out and the deposit moves to another date within a year; inside 30 days we keep it, because we've turned other work away.</p></details>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="book-inner">
+      <div class="book-copy reveal">
+        <p class="label label-amber">Bookings</p>
+        <h2>Tell us the date. We'll tell you in a day.</h2>
+        <p>Every enquiry gets a real answer within 24 hours — availability, the exact price for your venue and travel, and a photo of the booth set up at a party the same size as yours.</p>
+        <p class="book-direct">Or skip the form: <a href="mailto:hello@flashbox.example">hello@flashbox.example</a> &middot; <a href="tel:+10000000000">(000) 000-0000</a></p>
+      </div>
+      <form class="book-form reveal" id="bookForm" novalidate>
+        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field-row">
+          <div class="field"><label for="f-date">Event date</label><input id="f-date" name="date" type="date" required></div>
+          <div class="field"><label for="f-type">Type</label>
+            <select id="f-type" name="type"><option>Wedding</option><option>Birthday</option><option>Corporate</option><option>Venue residency</option><option>Something else</option></select>
+          </div>
+        </div>
+        <div class="field"><label for="f-venue">Venue and rough guest count</label><input id="f-venue" name="venue" type="text" placeholder="The Old Mill, about 120 people"></div>
+        <button class="btn btn-primary btn-block" type="submit">Send enquiry</button>
+        <p class="form-note" id="formNote">Opens your email app with the details filled in. No account, no spam, no follow-up calls.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <svg class="brand-mark" viewBox="0 0 24 34" aria-hidden="true"><rect x="1" y="1" width="22" height="32" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><rect x="5" y="5" width="14" height="9" rx="1.5" fill="currentColor"/><rect x="5" y="17" width="14" height="9" rx="1.5" fill="currentColor" opacity=".45"/></svg>
+      <span class="brand-word">Flashbox</span>
+      <p>The photobooth that runs itself. Delivered across the metro area and 150 miles around.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#autonomy">Unstaffed</a><a href="#how">How it works</a><a href="#packages">Packages</a><a href="#faq">FAQ</a><a href="#book">Bookings</a>
+    </nav>
+  </div>
+  <p class="foot-fine">© <span id="yr">2026</span> Flashbox. Fully insured, PAT tested, and never late. <span class="foot-sep">/</span> Photos belong to the people in them.</p>
+</footer>
+
+<template id="stripTpl">
+  <div class="strip">
+    <i class="sf"></i><i class="sf"></i><i class="sf"></i><i class="sf"></i>
+    <span class="strip-foot">FLASHBOX &middot; 23:41</span>
+  </div>
+</template>
+<!-- BODY:END -->
+<script src="assets/app.js"></script>
+</body>
+</html>
